@@ -1,36 +1,29 @@
-/*
-Declare a `season` variable set to a string with
-your favorite season. Provide an explicit type annotation.
-The type of a string is a `&str`. We'll discuss what
-the & symbol means later in the course.
+// Declare a `TOUCHDOWN_POINTS` constant at the file level set to the value 6.
+const TOUCHDOWN_POINTS: i32 = 6;
 
-Declare a `points_scored` variable set to 28.
-Provide an explicit type annotation. The type of
-an integer is `i32`.
+fn main() {
+    // Declare a `season` variable set to a string with your favorite season.
+    let season: &str = "Fall";
 
-It's time to update the team's score. Declare the
-`points_scored` variable to be mutable. Set its
-new value to 35.
+    // Declare a `points_scored` variable set to 28.
+    let mut points_scored: i32 = 28;
 
-Declare a `TOUCHDOWN_POINTS` constant at the file
-level set to the value 6.
+    // Update the team's score to 35.
+    points_scored = 35;
 
-Declare a `event_time` variable set to a string of
-"06:00".
+    // Declare an `event_time` variable set to a string of "06:00".
+    let event_time: &str = "06:00";
 
-Use variable shadowing to redeclare `event_time` set
-to a integer of 6.
+    // Use variable shadowing to redeclare `event_time` set to an integer of 6.
+    let event_time: i32 = 6;
 
-Use interpolation to print out all of the
-declared variables and constants in a println! call.
-Practice with direct interpolation, sequential
-arguments, and numeric arguments.
+    // Print out all of the declared variables and constants.
+    println!(
+        "Season: {season}, Points Scored: {}, Touchdown Points: {2}, Event Time: {event_time}",
+        points_scored, TOUCHDOWN_POINTS
+    );
 
-Declare a `favorite_beverage` variable set to a string
-of your favorite drink. Use an underscore to silence
-the compiler warning about the variable being unused.
-
-Remove the underscore. Provide a compiler directive
-to silence the compiler warning about the variable
-being unused.
-*/
+    // Declare a `favorite_beverage` variable set to a string of your favorite drink.
+    #[allow(unused_variables)] // Compiler directive to silence unused variable warning
+    let favorite_beverage: &str = "Coffee";
+}
