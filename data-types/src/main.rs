@@ -70,4 +70,9 @@ fn main() {
     let int_value: i32 = 42;
     let float_value: f64 = int_value as f64;
     println!("Integer: {}, as float: {}", int_value, float_value);
+
+    // Augmented Assignment Operators - Must be mutable variables
+    let mut aug_value: i32 = 10;
+    aug_value += 5; // aug_value = aug_value + 5
+    println!("After += 5: {}", aug_value);
 }
