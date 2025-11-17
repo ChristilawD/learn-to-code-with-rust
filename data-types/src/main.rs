@@ -75,4 +75,40 @@ fn main() {
     let mut aug_value: i32 = 10;
     aug_value += 5; // aug_value = aug_value + 5
     println!("After += 5: {}", aug_value);
+
+    // This will return a boolean value of True
+    println!("{}", 13 == 10 + 3);
+
+    // UTF stands for Unicode Transformation Format
+    let first_initial: char = 'D';
+    let first_name: &str = "Dennis";
+    let last_initial: char = 'C';
+    let last_name: &str = "Christilaw";
+    let imoji_face: char = '🤗'; // In Windows use Windows Key + . to access emoji panel
+    println!("Full Name: {} {}", first_name, last_name);
+    println!("Initials: {}.{}.", first_initial, last_initial);
+    println!("Imoji Face: {}", imoji_face);
+
+    // Arrays in Rust have a fixed size - Of the same type
+    let number_array: [i32; 6] = [10, 20, 30, 40, 50, 60];
+    println!("First element: {}", number_array[0]); // Index Counts start at 0
+    println!("Array length: {}", number_array.len());
+
+    let apples = ["Granny Smith", "Fuji", "Gala", "Honeycrisp"];
+    println!("I like {} apples.", apples[2]);
+    println!("Total apple types: {}", apples.len());
+
+    // Reading and Writing array elements
+    let mut mutable_array: [i32; 4] = [1, 2, 3, 4];
+    println!("Original array: {:?}", mutable_array);
+    // You can only replace elements in a mutable array
+    mutable_array[2] = 10;
+    println!("Modified array: {:?}", mutable_array);
+
+    // Display Traits - Cannot be used on collections like arrays
+    let display_number: i32 = 255;
+    println!("\nDefault Display: {}", display_number); // Default display
+    println!("Binary: {:b}", display_number); // Binary format
+    println!("Hexadecimal: {:x}", display_number); // Hex format
+    println!("Octal: {:o}", display_number); // Octal format
 }
