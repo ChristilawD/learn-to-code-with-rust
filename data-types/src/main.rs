@@ -111,4 +111,42 @@ fn main() {
     println!("Binary: {:b}", display_number); // Binary format
     println!("Hexadecimal: {:x}", display_number); // Hex format
     println!("Octal: {:o}", display_number); // Octal format
+
+    // Call the debug trait on a collection using {:?}
+    let debug_array: [i32; 5] = [5, 10, 15, 20, 25];
+    println!("Debug Array: {:?}", debug_array);
+    println!("Debug Array (pretty): {:#?}", debug_array);
+    println!("Debug Array another way: {debug_array:?}");
+    println!("Debug Array pretty another way: {debug_array:#?}");
+
+    // This will use the pretty print macro to display the array
+    dbg!(&debug_array);
+
+    // Tuples in Rust can hold multiple types
+    let person: (&str, i32, char) = ("Alice", 30, 'A');
+    println!("Name: {}", person.0); // Accessing first element
+    println!("Age: {}", person.1); // Accessing second element
+    println!("Grade: {}", person.2); // Accessing third element
+
+    let (student_name, student_age, student_grade) = person; // Destructuring the tuple
+    println!("Student Name: {}", student_name);
+    println!("Student Age: {}", student_age);
+    println!("Student Grade: {}", student_grade);
+
+    // Ranges in Rust are used to represent a sequence of values
+    let range_inclusive = 1..=5; // Inclusive range from 1 to 5
+    let range_exclusive = 1..5; // Exclusive range from 1 to 5
+    println!(
+        "Inclusive Range: {:?}",
+        range_inclusive.collect::<Vec<i32>>()
+    );
+    println!(
+        "Exclusive Range: {:?}",
+        range_exclusive.collect::<Vec<i32>>()
+    );
+
+    // Iterating over a range
+    for number in 1..=5 {
+        println!("Number in range: {}", number);
+    }
 }
